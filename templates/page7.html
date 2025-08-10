@@ -1,0 +1,40 @@
+<!-- templates/page7.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Solar Panel Results</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/page7.css') }}">
+</head>
+<body>
+  <header>
+    <a href="{{ url_for('page6') }}" class="back-btn">←</a>
+    <h1>Calculation Results</h1>
+  </header>
+
+  <main>
+    <div class="result-card">
+      <h2>No. of Panels</h2>
+      <p>{{ results.get('num_panels', '--') }}</p>
+    </div>
+
+    <div class="result-card">
+      <h2>Efficiency</h2>
+      <p>{{ results.get('efficiency', '--') }} %</p>
+    </div>
+
+    <div class="result-card">
+      <h2>Expected Output per Panel</h2>
+      <p>{{ results.get('expected_output', '--') }} kWh / day</p>
+    </div>
+
+    <div class="result-card">
+      <h3>Details</h3>
+      <p>Sunlight hours (est): {{ results.get('sunlight_hours', '--') }} h/day</p>
+      <p>GHI: {{ results.get('ghi', '--') }} kWh/m²/day</p>
+      <p>Location: {{ results.get('location', '--') }}</p>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!-- templates/page6.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>No. of Panels</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/page6.css') }}">
+</head>
+<body>
+  <div class="header">
+     <h2>No. of Panels</h2>
+  </div>
+
+  <div class="container">
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <div class="flash">{{ messages[0] }}</div>
+      {% endif %}
+    {% endwith %}
+
+    <form method="POST" action="{{ url_for('page6') }}" id="panelForm">
+      <div class="input-select">
+        <input id="panel_output" name="panel_output" type="number" step="any" placeholder="Panel Output" required />
+        <select id="unit" name="unit">
+          <option value="W">W</option>
+          <option value="kW">kW</option>
+        </select>
+      </div>
+
+      <input id="panel_area" name="panel_area" type="number" step="any" placeholder="Panel Area (sq ft)" required />
+      <input id="energy_consumption" name="energy_consumption" type="number" step="any" placeholder="Energy Consumption (kWh per day)" required />
+      <input id="location" name="location" type="text" placeholder="Enter District or Place (optional)" />
+
+      <button type="submit" class="green-btn">Calculate</button>
+      
+    </form>
+     <a href="{{ url_for('monthly_consumption') }}">
+  <button type="button" class="green-btn">Calculate energy consumption</button>
+</a>
+  </div>
+</body>
+</html>

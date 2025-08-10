@@ -1,0 +1,141 @@
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-image: url("../images/test-image2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background: green;
+  color: white;
+}
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+#district-input {
+  padding: 6px;
+  width: 200px;
+}
+
+
+
+.map-container {
+  flex: 1;
+  position: relative;
+  height: 100%;
+}
+
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.search-button {
+  width: 70%;
+  padding: 8px;
+  border-radius: 4px;
+  border: none;
+}
+.hamburger {
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+.popup-menu {
+  position: absolute;
+  top: 50px; /* below header */
+  right: 10px;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 200px;
+  display: none; /* hidden by default */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  border-radius: 4px;
+  z-index: 1000;
+}
+
+.popup-menu p {
+  padding: 10px;
+  margin:  0;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.popup-menu p:hover{
+  background-color: #f0f0f0;
+}
+
+.popup-menu p:active{
+  background-color: #dcdcdc;
+}
+
+.analyze-button {
+  display: block;
+  width: 90%;
+  margin: 10px auto;
+  padding: 12px;
+  background-color: green; /* Full green background */
+  color: white;            /* White text */
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  z-index: 10;
+}
+
+.analyze-button:active {
+  background-color: #006400; /* Darker green when clicked */
+  transform: scale(0.98);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+.search-container {
+  display: flex;
+  gap: 8px; /* space between input and button */
+}
+
+#district-input,
+.search-button {
+  padding: 8px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  height: 38px; /* same height for both */
+}
+
+#district-input {
+  flex: 1; /* take remaining space */
+}
+
+.search-button {
+  flex-shrink: 0; /* don’t shrink */
+  background-color: green;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.search-button:active {
+  background-color: #006400;
+}

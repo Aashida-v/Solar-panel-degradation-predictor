@@ -1,0 +1,64 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-image: url("../images/solar-image2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+header {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background: #2e7d32;
+  color: white;
+  font-style: Arial, sans-serif;
+}
+
+.back-btn {
+  color: white;
+  text-decoration: none;
+  margin-right: 1rem;
+  font-size: 1.2rem;
+}
+
+h1 {
+  margin: 0;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.result-card {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.result-card h2 {
+  margin: 0 0 0.5rem;
+  color: #2e7d32;
+}
+
+.result-card p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+.back-arrow {
+  font-size: 26px; /* adjust as needed */
+  cursor: pointer;
+  margin-right: 10px;
+}
+

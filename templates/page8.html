@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Energy Consumption</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/page8.css') }}" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+  <div class="header">
+    <i class="fa fa-arrow-left back-arrow" onclick="history.back()"></i>
+    <h2>Energy Consumption</h2>
+  </div>
+
+  <!-- Tab Buttons -->
+  <div class="tab-buttons">
+    <button id="monthlyTab" class="active" onclick="switchTab('monthly')">Monthly</button>
+    <button id="annualTab" onclick="switchTab('annual')">Annual</button>
+  </div>
+
+  <!-- Monthly Form -->
+  <div class="container monthly-form">
+    <input type="text" placeholder="Usage (kWh or unit)" class="input-box" />
+    <div class="dropdown-input">
+      <input type="text" placeholder="Select Month" id="monthInput" readonly />
+      <div class="dropdown-content" id="monthDropdown">
+        <div>January</div><div>February</div><div>March</div>
+        <div>April</div><div>May</div><div>June</div>
+        <div>July</div><div>August</div><div>September</div>
+        <div>October</div><div>November</div><div>December</div>
+      </div>
+    </div>
+    <input type="text" placeholder="Year" class="input-box" />
+    <button class="green-btn" onclick="calculateConsumption('monthly')">Calculate</button>
+  </div>
+
+  <!-- Annual Form -->
+  <div class="container annual-form">
+    <input type="text" placeholder="Usage (kWh or unit)" class="input-box" />
+    <input type="text" placeholder="Year" class="input-box" />
+    <button class="green-btn" onclick="calculateConsumption('annual')">Calculate</button>
+  </div>
+
+  <!-- Result -->
+  <div id="result" style="margin-top: 10px; font-weight: bold;"></div>
+   <script src="{{ url_for('static', filename='js/page8.js') }}"></script>
+</body>
+</html>

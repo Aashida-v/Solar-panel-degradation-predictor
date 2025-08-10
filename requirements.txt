@@ -1,0 +1,13 @@
+flask
+flask_sqlalchemy
+flask_mail
+werkzeug
+itsdangerous
+joblib
+pathlib
+numpy
+scikit-learn
+pandas
+numpy
+dotenv
+werkzeug

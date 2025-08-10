@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Select Location - Solar Panel Analyzer</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/page3.css') }}">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #map {
+      height: 500px;
+      width: 90%;
+      margin: 400px 80px;
+      border: 2px solid #555;
+    }
+
+    .controls {
+      width: 90%;
+      max-width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .controls input, .controls button {
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    .info {
+      font-size: 16px;
+      margin: 10px 0;
+      color: #333;
+    }
+
+    button {
+      background-color: green;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+
+    button:active{
+      background-color: #006400;
+    }
+
+    @media screen and (max-width: 600px) {
+      #map {
+        height: 350px;
+        width: 100%;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="page-wrapper">
+    <!-- Header -->
+    <div class="header">
+      <h2>Select Your Location</h2>  
+      <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+    </div>
+
+    <!-- Popup Menu -->
+    <div id="popup-menu" class="popup-menu">
+      <p onclick="openInstallationPlace()">Installation Place</p>
+      <p onclick="openNoOfPanels()">No. of Panels</p>
+    </div>
+
+  <div class="controls">
+    <input type="text" id="search-box" placeholder="Enter district or city name">
+    <button id="search-button">Search</button>
+
+    <p class="info" id="selected-location">Selected Location: None</p>
+    <p class="info" id="place"></p>
+    <p class="info" id="panels"></p>
+
+    <button id="analyze-button">Analyze</button>
+  </div>
+
+  <div id="map"></div>
+  
+  <script src="{{ url_for('static', filename='js/page3.js') }}"></script>
+<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+</body>
+</html>

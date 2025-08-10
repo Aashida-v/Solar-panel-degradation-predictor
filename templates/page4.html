@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Solar Analysis Result</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+    }
+
+    .result-container {
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .result-item {
+      margin: 10px 0;
+      font-size: 18px;
+    }
+
+    .highlight {
+      font-weight: bold;
+      color: #16a085;
+    }
+
+    .recommendation {
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 8px;
+      background-color: #dff0d8;
+      color: #3c763d;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .recommendation.bad {
+      background-color: #f2dede;
+      color: #a94442;
+    }
+  </style>
+</head>
+<body>
+  <h1>Solar Analysis Result</h1>
+
+  <div class="result-container">
+    <div class="result-item">
+      <span class="highlight">District:</span> {{ result.district }}
+    </div>
+    <div class="result-item">
+      <span class="highlight">Latitude:</span> {{ result.latitude }}
+    </div>
+    <div class="result-item">
+      <span class="highlight">Longitude:</span> {{ result.longitude }}
+    </div>
+    <div class="result-item">
+      <span class="highlight">Global Horizontal Irradiance (GHI):</span> {{ result.ghi }} kWh/m²/day
+    </div>
+    <div class="result-item">
+      <span class="highlight">Average Temperature:</span> {{ result.temperature }} °C
+    </div>
+    <div class="result-item">
+      <span class="highlight">Peak Sunlight Hours:</span> {{ result.sunlight_hours }} hours/day
+    </div>
+
+    <div class="recommendation {% if 'Not' in result.recommendation %}bad{% endif %}">
+      {{ result.recommendation }}
+    </div>
+  </div>
+</body>
+</html>

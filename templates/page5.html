@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Installation Place</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/page5.css') }}" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+  <div class="header">
+    <i class="fa fa-arrow-left back-arrow" onclick="history.back()"></i>
+    <h2>Installation Place</h2>
+  </div>
+   
+  <div class="center-box">
+    <form method="POST" action="/installation">
+      <input type="number" name="rooftop_area" placeholder="Rooftop Area (sq ft)" value="{{ rooftop_area }}" required />
+      <input type="number" name="ground_area" placeholder="Ground Area (sq ft)" value="{{ ground_area }}" required />
+      <button type="submit" class="green-btn">Enter</button>
+    </form>
+
+    {% if result %}
+    <div class="result">
+      <p>{{ result }}</p>
+    </div>
+    {% endif %}
+  </div>
+</body>
+</html>
