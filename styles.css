@@ -1,0 +1,115 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  background-image: url("../images/solar-panel3.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.corner-logo {
+  width: 60px;
+  height: auto;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-container {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 8px;
+  width: 320px;
+  text-align: center;
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.tabs button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  background: white;
+  color: green;
+  font-weight: bold;
+}
+
+.tabs button.active {
+  background: green;
+  color: white;
+}
+
+.form {
+  display: none;
+  flex-direction: column;
+}
+
+.form.active {
+  display: flex;
+}
+
+/* Uniform input + button size */
+.form input,
+.green-btn {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.form input {
+  border: 1px solid #ccc;
+}
+
+.green-btn {
+  background: green;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.green-btn:active {
+  background-color: #006400;
+  transform: scale(0.98);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.switch-text {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.switch-text span {
+  color: green;
+  cursor: pointer;
+}
+
+.forgot-pass {
+  text-align: right;
+  font-size: 12px;
+  margin-top: 5px;
+  color: green;
+  cursor: pointer;
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: whitesmoke;
+}
