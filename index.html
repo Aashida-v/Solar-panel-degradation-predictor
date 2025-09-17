@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Register Page</title>
-  <link rel="manifest" href="manifest.json">
+  <link rel="manifest" href="/Solar-panel-degradation-predictor/manifest.json">
   <meta name="theme-color" content="#4CAF50">
   <link rel="icon" type="images/jpeg" href="{{ url_for('static', filename='images/solar-panel2.jpg') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <link rel="stylesheet" href="/Solar-panel-degradation-predictor/style.css">
 </head>
 <body>
   <img src="{{ url_for('static', filename='images/logo-removebg-preview.png') }}" class="corner-logo" alt="Logo" />
@@ -124,7 +124,7 @@
       signupTab.click();
     });
   </script>
-  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  <script src="/Solar-panel-degradation-predictor/script.js"></script>
   <script>
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('sw.js')
